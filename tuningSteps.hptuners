@@ -1,0 +1,49 @@
+### Need to adjust etc area scalar (Engine>Idle>Airflow) when increasing throttle body diameter
+To find the area of the new throttle body.
+Using formula (pi x r x r)-(shaft length x shaft thickness)= throttle body area.
+87mm: (pi x 43.5 x 43.5)-(87 x 10)= 5,074.6786987553
+90mm: (pi x 45 x 45)-(90 x 10)= 5,461.74
+102mm: (pi x 51 x 51)-(102 x 10)= 7,151.282491987
+112mm: (pi x 56 x 56)-(112 x 10)= 8,731.744
+pi= 3.14159265359
+
+Idle RPM
+If the idle is high, go up on ETC.
+If the idle is low, go up on the minimum airflow table.
+
+### Need to adjust the boost disable/enable (Engine>Torque Management>Boost Disable)
+MAP Disable Stock value: 192kpa --> 256kpa
+MAP Enable Stock Value: 172kpa (roughly 10.2 psi)  --> 255kpa
+
+### Need to adjust the estimated max map value (Engine>Airflow>General)
+MAP Estimation>Estimated max
+Stock value: 190kpa --> 256kpa
+
+## Need tto disable Torque Limits (Engine>Torque Management>Max Torque)
+Spark Torque Limit -- disbaled
+Fueling Torque Limit -- disabled
+Throttle Torque Limit -- disabled
+
+### Disable secondary O2 sensors DTCs (Engine Diagnostics>DTCs uncheck SES and set error mode to 'No Error Reported')
+P0137 HO2S Circuit Low Voltage Bank 1 Sensor 2
+P0138 HO2S Circuit High Voltage Bank 1 Sensor 2
+P0140 HO2S Circuit Insufficiency Activity Bank 1 Sensor 2
+P0141 HO2S Heater Circuit Bank 1 Sensor 2
+P0157 HO2S Circuit Low Voltage Bank 2 Sensor 2
+P0158 HO2S Circuit High Voltage Bank 2 Sensor 2
+P0160 HO2S Circuit Insufficiency Activity Bank 2 Sensor 2
+P0161 HO2S Heater Circuit Bank 2 Sensor 2
+P0420 Catalyst System Efficiency below threshold Bank 1
+P0430 Catalyst System Efficiency below threshold Bank 2
+
+### Disable catalyst over-temp (Engine>Fuel>Temperature Control)
+COTS -- toggle to disable
+
+#### ky13 ZR1 E67 changes
+Fans -- System>Fans>Desired% vs ECT -- (ramped up the desired fan % at 210 instead of the factory 224.6; was getting too warm in stop and go traffic)
+PE -- Engine>Fuel>Power Enrich>EQ Ratio (Gas) -- (1.282 @3000 RPM and beyond (~11.4 AFR demanded); linear climb/smooth transition 1500 to 3000 RPM (1.190 @1500) to 1.282)
+      Engine>Fuel>Power Enrich>Enrichment Rate -- (1/1 for Ramp In/Ramp Out, respectively)
+      Engine>Fuel>Power Enrich>Delay -- (1500 RPM)
+      Engine>Fuel>Power Enrich>Enable -- (Min MAP 80kpa)
+      Engine>Fuel>Power Enrich>Throttle -- (Hot (entire table to 30))
+
