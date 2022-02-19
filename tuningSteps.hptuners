@@ -25,6 +25,10 @@ Fueling Torque Limit -- disabled
 Throttle Torque Limit -- disabled
 
 ### Disable secondary O2 sensors DTCs (Engine Diagnostics>DTCs uncheck SES and set error mode to 'No Error Reported')
+P0036 HO2S Heater Control Circuit Bank 1 Sensor 2
+P0054 HO2S Heater Resistance Bank 1 Sensor 2
+P0056 HO2S Heater Control Circuit Bank 2 Sensor 2
+P0060 HO2S Heater Resistance Bank 1 Sensor 2
 P0137 HO2S Circuit Low Voltage Bank 1 Sensor 2
 P0138 HO2S Circuit High Voltage Bank 1 Sensor 2
 P0140 HO2S Circuit Insufficiency Activity Bank 1 Sensor 2
