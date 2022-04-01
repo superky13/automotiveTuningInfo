@@ -12,7 +12,7 @@ If the idle is high, go up on ETC.
 If the idle is low, go up on the minimum airflow table.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 ###### ky13 ZR1 E67 changes (ID1050x injectors; 2.6" upper pulley; 103mm NW tb; ported Kong snout; Synergy intake; requisite cooling mods) ######
-### adjusted the boost disable/enable (Engine>Torque Management>Boost Disable)
+### adjusted the boost disable/enable (Engine>Torque Management>Supercharger>Boost Disable)
 MAP Disable Stock value: 192kpa --> 256kpa
 MAP Enable Stock Value: 172kpa (roughly 10.2 psi)  --> 255kpa
 
@@ -24,6 +24,15 @@ Stock value: 190kpa --> 256kpa
 Spark Torque Limit -- disbaled
 Fueling Torque Limit -- disabled
 Throttle Torque Limit -- disabled
+
+## configured ID1050x injectors (E67 ECM can handle up to 127 lb/hr injectors; anything larger and you'll want to double the Stoich AFR values (Engine>Fuel>General>Stoichiometry>Stoich AFR) and half the values in the table provided by Injector Dynamics (Flow vs Differential Fuel Pressure); if you look at the table provided by ID, the 1050x injectors flow 157 lb/hr at a pressure differential of 768 kPa)
+There are five tables (6 if running injectors that flow more than 127 lb/hr) that need to be updated ((Engine>Fuel>General) ID1050x-GM Characterization Tables - HP-Tuners- 11-15-2018.xls has these values; also included screen shots per table):
+1) Flow Rate vs Pressure (see flowRateVsPress.png)
+2) Min Injector Pulse (see minInjectorPulse.png)
+3) Offset vs. Press vs. IGNV (see offsetVsPressVsIGNV.png)
+4) Short Pulse Limit (see shortPulseLimit.png)
+5) Short Pulse Adder (see shortPulseAdder.png)
+6) ** see note above ** multiple the values in the Stoich AFR table by 2 (see stoichAFR.png)
 
 ### disabled secondary O2 sensors DTCs (Engine Diagnostics>DTCs uncheck SES and set error mode to 'No Error Reported')
 P0036 HO2S Heater Control Circuit Bank 1 Sensor 2
