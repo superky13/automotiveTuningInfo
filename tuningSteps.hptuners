@@ -10,21 +10,22 @@ pi= 3.14159265359
 Idle RPM
 If the idle is high, go up on ETC.
 If the idle is low, go up on the minimum airflow table.
-
-### Need to adjust the boost disable/enable (Engine>Torque Management>Boost Disable)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+###### ky13 ZR1 E67 changes (ID1050x injectors; 2.6" upper pulley; 103mm NW tb; ported Kong snout; Synergy intake; requisite cooling mods) ######
+### adjusted the boost disable/enable (Engine>Torque Management>Boost Disable)
 MAP Disable Stock value: 192kpa --> 256kpa
 MAP Enable Stock Value: 172kpa (roughly 10.2 psi)  --> 255kpa
 
-### Need to adjust the estimated max map value (Engine>Airflow>General)
+### adjusted the estimated max map value (Engine>Airflow>General)
 MAP Estimation>Estimated max
 Stock value: 190kpa --> 256kpa
 
-## Need tto disable Torque Limits (Engine>Torque Management>Max Torque)
+## disabled Torque Limits (Engine>Torque Management>Max Torque)
 Spark Torque Limit -- disbaled
 Fueling Torque Limit -- disabled
 Throttle Torque Limit -- disabled
 
-### Disable secondary O2 sensors DTCs (Engine Diagnostics>DTCs uncheck SES and set error mode to 'No Error Reported')
+### disabled secondary O2 sensors DTCs (Engine Diagnostics>DTCs uncheck SES and set error mode to 'No Error Reported')
 P0036 HO2S Heater Control Circuit Bank 1 Sensor 2
 P0054 HO2S Heater Resistance Bank 1 Sensor 2
 P0056 HO2S Heater Control Circuit Bank 2 Sensor 2
@@ -40,12 +41,14 @@ P0161 HO2S Heater Circuit Bank 2 Sensor 2
 P0420 Catalyst System Efficiency below threshold Bank 1
 P0430 Catalyst System Efficiency below threshold Bank 2
 
-### Disable catalyst over-temp (Engine>Fuel>Temperature Control)
+### disabled catalyst over-temp (Engine>Fuel>Temperature Control)
 COTS -- toggle to disable
 
-#### ky13 ZR1 E67 changes
+### commanded fans to spin faster earlier; didn't like how hot the car was getting in stop/go traffic. 
 Fans -- System>Fans>Desired% vs ECT -- (ramped up the desired fan % at 210 instead of the factory 224.6; was getting too warm in stop and go traffic)
-PE -- Engine>Fuel>Power Enrich>EQ Ratio (Gas) -- (1.282 @3000 RPM and beyond (~11.4 AFR demanded); linear climb/smooth transition 1500 to 3000 RPM (1.190 @1500) to 1.282)
+
+### adjusted power enrichment settings
+PE -- Engine>Fuel>Power Enrich>EQ Ratio (Gas) -- (1.282 @3000 RPM and beyond (~11.4 AFR commanded); linear climb/smooth transition 1500 to 3000 RPM (1.190 @1500) to 1.282)
       Engine>Fuel>Power Enrich>Enrichment Rate -- (1/1 for Ramp In/Ramp Out, respectively)
       Engine>Fuel>Power Enrich>Delay -- (1500 RPM)
       Engine>Fuel>Power Enrich>Enable -- (Min MAP 80kpa)
