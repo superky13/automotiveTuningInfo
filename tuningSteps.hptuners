@@ -25,7 +25,7 @@ Spark Torque Limit -- disbaled
 Fueling Torque Limit -- disabled
 Throttle Torque Limit -- disabled
 
-## configured ID1050x injectors (E67 ECM can handle up to 127 lb/hr injectors; anything larger and you'll want to double the Stoich AFR values (Engine>Fuel>General>Stoichiometry>Stoich AFR) and half the values in the table provided by Injector Dynamics (Flow vs Differential Fuel Pressure); if you look at the table provided by ID, the 1050x injectors flow 157 lb/hr at a pressure differential of 768 kPa)
+## configured ID1050x injectors (E67 ECM can handle up to 127 lb/hr injectors; anything larger and you'll want to double the Stoich AFR values (Engine>Fuel>General>Stoichiometry>Stoich AFR) and half the values in the table provided by Injector Dynamics (Flow vs Differential Fuel Pressure); if you look at the table provided by ID, the 1050x injectors flow 157 lb/hr at a pressure differential of 768 kPa.  However, the car is never actually going to see a delta pressure value that high, so you can just paste the values from ID into the IFR table and accept a value of 127 for the top 14 cells)
 There are five tables (6 if running injectors that flow more than 127 lb/hr) that need to be updated ((Engine>Fuel>General) ID1050x-GM Characterization Tables - HP-Tuners- 11-15-2018.xls has these values; also included screen shots per table):
 1) Flow Rate vs Pressure (see flowRateVsPress.png)
 2) Min Injector Pulse (see minInjectorPulse.png)
