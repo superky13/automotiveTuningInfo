@@ -1,0 +1,15 @@
+### Display injector duty cycle using DashLogic
+1) Connect to your DashLogic/DashCommand, choose, a profile, then click 'Calculation PIDs'
+2) Edit one of the available Calculation PIDs (none are configured by default; I typically just start with 0)
+3)  Enter the following values into the appropriate fields
+
+PID Name: Injector Duty Cycle
+Units: percent
+Acronym: IDC
+Decimal Places: 1
+PID Calculation Expression: ((pid(1008) * pid(10))/1200)
+
+4) Save the changes and add the new PID to your DIC or HUD using bracket notation (you will now see the 'Injector Duty Cycle' in the 'Lookup PID' dropdown; Calculation PID0 corresponds with PID 20000 (and so on))
+example:
+IDC: {20000}
+
