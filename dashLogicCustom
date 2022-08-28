@@ -13,3 +13,17 @@ PID Calculation Expression: ((pid(1008) * pid(10))/1200)
 example:
 IDC: {20000}
 
+### Display AFR from external input
+1) Connect to your DashLogic/DashCommand, choose, a profile, then click 'Calculation PIDs'
+2) Edit one of the available Calculation PIDs
+3)  Enter the following values into the appropriate fields
+
+PID Name: PLX SM-AFR
+Units: AFR
+Acronym: PLX
+Decimal Places: 1
+PID Calculation Expression: ((pid(10001) * 2) + 10)
+
+4) Save the changes and add the new PID to your DIC or HUD using bracket notation (you will now see the 'PLX SM-AFR' in the 'Lookup PID' dropdown)
+example:
+AFR: {10001}
